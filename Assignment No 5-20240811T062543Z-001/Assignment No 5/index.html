@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    /> -->
+  </head>
+  <body>
+    <div class="form-cont">
+      <form action="" class="myform">
+        <h6 style="text-align: center;">Login Here</h6>
+        <div>
+          <label for="">Username</label> <br />
+          <input type="text" name="" placeholder="" id="usname" />
+        </div>
+        <div>
+          <label for="">Password</label> <br />
+          <input type="password" value="" name="" id="pwd" />
+        </div>
+        <div style="display: flex; align-items: center;">
+          <span style="text-wrap: nowrap;">Show password:</span>
+          <input
+            type="checkbox"
+            style="width: 40px; margin-bottom: 7px;"
+            id="ch"
+            onclick="showPass()"
+          />
+        </div>
+
+        <div
+          class=""
+          style="display: flex; gap: 10px; justify-content: center;"
+        >
+          <input
+            type="button"
+            class="form-sub"
+            value="Login"
+            onclick="clickHandle(this)"
+          />
+          <input
+            type="button"
+            class="form-sub"
+            value="Sign up"
+            onclick="clickHandle(this)"
+          />
+        </div>
+      </form>
+    </div>
+    <script>
+      function clickHandle(b) {
+        if (b.value == "Login") {
+          var username = document.getElementById("usname");
+          var passwd = document.getElementById("pwd");
+
+          if (passwd.value == "" && username.value == "") {
+            alert("Please enter the username and password");
+            username.style.backgroundColor = "rgb(255, 117, 117)";
+            passwd.style.backgroundColor = "rgb(255, 117, 117)";
+            username.style.border = "3px solid rgb(255, 32, 32)";
+            passwd.style.border = "3px solid rgb(255, 32, 32)";
+            return;
+          }
+
+          if (passwd.value == "" || username.value == "") {
+            if (username.value == "" || /\s\s+/.test(username.value)) {
+              alert("Please enter the username");
+              username.style.backgroundColor = "rgb(255, 117, 117)";
+              username.style.border = "3px solid rgb(255, 32, 32)";
+            } else {
+              username.style.backgroundColor = "white";
+              username.style.border = "1px solid black";
+            }
+            if (passwd.value == "" || /\s\s+/.test(passwd.value)) {
+              alert("Please enter the password");
+              passwd.style.backgroundColor = "rgb(255, 117, 117)";
+              passwd.style.border = "3px solid rgb(255, 32, 32)";
+            } else {
+              passwd.style.backgroundColor = "white";
+              passwd.style.border = "1px solid black";
+            }
+          } else {
+            username.style.backgroundColor = "white";
+            passwd.style.backgroundColor = "white";
+            username.style.border = "1px solid black";
+            passwd.style.border = "1px solid black";
+            if (username.value == "admin" && passwd.value == 1234) {
+              alert("ussername and password matched");
+            } else {
+              alert("Please enter correct username or password.");
+            }
+          }
+        } else if (b.value == "Sign up") {
+          window.open("signup.html");
+        }
+      }
+
+      function showPass() {
+        var checkbox = document.getElementById("ch");
+        console.log(checkbox);
+        var paswd = document.getElementById("pwd");
+        if (checkbox.checked == true) {
+          paswd.type = "text";
+          checkbox.previousElementSibling.innerHTML = "Hide password";
+        } else {
+          paswd.type = "password";
+          checkbox.previousElementSibling.innerHTML = "Show password";
+        }
+      }
+    </script>
+  </body>
+</html>

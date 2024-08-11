@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <div class="form-cont">
+      <form action="" class="myform">
+        <h6 style="text-align: center;">Register here</h6>
+        <div>
+          <label for="">Username</label> <br />
+          <input type="text" name="" placeholder="" id="" />
+        </div>
+        <div>
+          <label for="">Email</label><br />
+          <input type="text" name="" id="" />
+        </div>
+        <div>
+          <label for="">Password</label> <br />
+          <input type="text" name="" id="" />
+        </div>
+        <div>
+          <label for="">Confirm password</label> <br />
+          <input type="text" name="" id="" />
+        </div>
+        <div
+          class=""
+          style="display: flex; gap: 10px; justify-content: center;"
+        >
+          <input
+            type="button"
+            class="form-sub"
+            style="width: 100px; cursor: pointer;"
+            value="Register"
+            onclick="handleSubmit(this)"
+          />
+          <input
+            type="button"
+            class="form-sub"
+            style="width: 100px; cursor: pointer;"
+            value="Login"
+            onclick="handleSubmit(this)"
+          />
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function handleSubmit(b) {
+        if (b.value == "Register") {
+          alert("Register page");
+        } else {
+          open("/index.html");
+        }
+      }
+    </script>
+  </body>
+</html>
